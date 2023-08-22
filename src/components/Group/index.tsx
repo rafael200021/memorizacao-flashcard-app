@@ -9,7 +9,7 @@ import React, { useEffect, useState } from "react";
 export default function Group() {
   const [groups, setGroups] = useState<IGroups[] | undefined>([]);
   const [groupsData, setGroupsData] = useState<IGroups[] | undefined>([]);
-  const [search,setSearch] = useState("");
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const id = localStorage.getItem("id");
@@ -22,7 +22,7 @@ export default function Group() {
 
   const searchGroups = () => {
 
-    setGroupsData(groups?.filter((group)=> group.name.toLowerCase().includes(search.toLowerCase())));
+    setGroupsData(groups?.filter((group) => group.name.toLowerCase().includes(search.toLowerCase())));
 
     setSearch("");
   }
@@ -38,7 +38,7 @@ export default function Group() {
               valor={search}
               placeholder="Search"
             />
-            <Button color="bg-blue-500 text-white font-bold hover:bg-blue-700" onClick={searchGroups} text="Search"/>
+            <Button color="bg-blue-500 text-white font-bold hover:bg-blue-700" onClick={searchGroups} text="Search" />
           </div>
           <div className="flex justify-between">
             <h1 className="mb-10 font-semibold text-2xl">Groups</h1>
@@ -60,10 +60,10 @@ export default function Group() {
           <h1 className="font-bold text-3xl">
             You don't found any card here ?
           </h1>
-          <button className="btn bg-blue-500 border-white">Create one !</button>
+          <a href="#modal-card-group" className="btn bg-blue-500 border-white">Create one !</a>
         </div>
       )}
-      <ModalCardGroup />
+      <ModalCardGroup setGroups={setGroups} setGroupsData={setGroupsData}/>
     </div>
   );
 }

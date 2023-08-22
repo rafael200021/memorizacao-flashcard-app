@@ -20,7 +20,7 @@ export default function Navbar() {
           <div className="dropdown dropdown-end">
             <div
               tabIndex={0}
-              className="w-12 h-12 flex justify-center items-center font-bold text-lg text-white text-center rounded-full bg-blue-500"
+              className="w-12 h-12 flex justify-center items-center font-bold text-lg text-white capitalize text-center rounded-full bg-blue-500"
             >
               {nome![0]}
             </div>

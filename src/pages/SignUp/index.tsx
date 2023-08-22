@@ -12,7 +12,7 @@ export default function SignUp() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
-  const cadastrar = async () => {
+  const register = async () => {
     const user: IUser = {
       name: name,
       password: password,
@@ -53,19 +53,20 @@ export default function SignUp() {
         />
       </div>
       <p className="self-start mt-2 text-sm">
-        Já possuí uma conta?{" "}
+
+        Already have an account?
         <Link
           className="text-blue-500 hover:text-blue-700 transition-all"
           to={signin}
         >
-          <span>Realize o Login Agora</span>
+          <span> Login Now</span>
         </Link>
       </p>
       <button
-        onClick={cadastrar}
+        onClick={register}
         className="mt-5 border rounded p-5 w-40 border-blue-500 text-blue-500 font-bold hover:text-white hover:bg-blue-500 transition-all"
       >
-        Cadastrar
+        Register
       </button>
     </HomeContainer>
   );

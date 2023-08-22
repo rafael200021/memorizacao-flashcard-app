@@ -1,18 +1,27 @@
 import axiosConfig from "Helpers/axios";
 import ICard from "Intefaces/ICard";
+import IGroups from "Intefaces/IGroups";
 import React, { useState } from "react";
+
+
+interface ModalProps {
+  id: string | undefined,
+  modal: string,
+  setCards: React.Dispatch<React.SetStateAction<ICard[] | undefined>>,
+  setGroup: React.Dispatch<React.SetStateAction<IGroups | undefined>>
+}
 
 export default function Modal({
   id,
   modal,
-}: {
-  id: string | undefined;
-  modal: string;
-}) {
+  setCards,
+  setGroup
+}: ModalProps) {
   const [front, setFront] = useState<string>("");
   const [back, setBack] = useState<string>("");
 
   const createCard = async () => {
+
     const data: ICard = {
       back: back,
       front: front,
@@ -21,6 +30,16 @@ export default function Modal({
     };
 
     await axiosConfig.post("cards", data);
+
+    const idUsuario = localStorage.getItem("id");
+
+    await axiosConfig.get(`/groups/${id}/cards/time`).then((res) => {
+      setCards(res.data);
+    });
+
+    await axiosConfig.get(`/users/${idUsuario}/groups/${id}`).then((res) => {
+      setGroup(res.data);
+    });
 
     setFront("");
     setBack("");

@@ -36,19 +36,19 @@ export default function SignIn() {
         <InputText tipo="password" valor={password} funcao={setPassword} />
       </div>
       <p className="self-start mt-2 text-sm">
-        Não possuí uma conta ainda?{" "}
+        Don't have an account yet?
         <Link
           className="text-blue-500 hover:text-blue-700 transition-all"
           to={signup}
         >
-          <span>Cadastre-se Agora</span>
+          <span> Sign Up</span>
         </Link>
       </p>
       <button
         onClick={login}
         className="mt-5 border rounded p-5 w-40 border-blue-500 text-blue-500 font-bold hover:text-white hover:bg-blue-500 transition-all"
       >
-        Entrar
+        Login
       </button>
     </HomeContainer>
   );

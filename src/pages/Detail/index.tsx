@@ -20,7 +20,6 @@ export default function Detail() {
     });
 
     axiosConfig.get(`/groups/${id}/cards/time`).then((res) => {
-      console.log(res);
       setCards(res.data);
     });
 
@@ -34,7 +33,6 @@ export default function Detail() {
           <p>Created At: {group?.createdAt}</p>
         </div>
         <p className="py-4">{group?.description}</p>
-        <p>Cards to Study: {cards?.length}</p>
         <div className="mt-10 gap-2 flex justify-end">
           <a href="#modal" className="btn">
             Create Card
@@ -44,7 +42,7 @@ export default function Detail() {
           </Link>
         </div>
       </div>
-      <Modal id={id} modal="modal" />
+      <Modal id={id} modal="modal" setCards={setCards} setGroup={setGroup} />
     </div>
   );
 }

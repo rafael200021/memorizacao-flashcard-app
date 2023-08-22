@@ -2,10 +2,17 @@ import axiosConfig from "Helpers/axios";
 import IGroups from "Intefaces/IGroups";
 import { useState } from "react";
 
-export default function ModalCardGroup() {
+interface createGroupProps {
+  setGroups: React.Dispatch<React.SetStateAction<IGroups[] | undefined>>,
+  setGroupsData: React.Dispatch<React.SetStateAction<IGroups[] | undefined>>
+}
+
+export default function ModalCardGroup({ setGroups, setGroupsData }: createGroupProps) {
   const [name, setName] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [image, setImage] = useState<string>("");
+
+
 
   const createGroup = async () => {
     const id = localStorage.getItem("id");
@@ -25,6 +32,12 @@ export default function ModalCardGroup() {
       setName("");
       setDescription("");
       setImage("");
+
+      axiosConfig.get(`/users/${id}/groups`).then((res) => {
+        setGroups(res.data);
+        setGroupsData(res.data);
+      });
+
     }
   };
 
