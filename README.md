@@ -1,11 +1,21 @@
 # Memorizacao FlashCard App
-## React, Typescript, Tailwind CSS, daisyUi
 
-Idioma: Português
+I created this application to help me study languages and improve my React skills. The goal is to make language learning more interactive and efficient while also building a useful project in React.
 
-Eu gosto de estudar idiomas, então eu criei essa aplicação para me ajudar a aprender mais idiomas e também estudar o React. A aplicação foi feita utilizando React, Typescript, Tailwind CSS e daisyUI
+## Features
 
+- **Interactive Learning**: A user-friendly interface for studying different languages.
+- **Customizable Flashcards**: Users can create, edit, and organize flashcards to enhance memorization.
+- **Responsive Design**: The app is fully responsive and works seamlessly across all devices.
+- **Theming with daisyUI**: The app includes a customizable and visually appealing UI, thanks to daisyUI.
 
-Language: English
+## Tech Stack
 
-I like studying languages, so I created this app to help me learn more languages ​​and also study React. This app was made using React, Typescript,  Tailwind CSS and daisyUI.
+- **React.js**: For building the interactive user interface.
+- **TypeScript**: For adding type safety and improving the maintainability of the codebase.
+- **Tailwind CSS**: For flexible and responsive styling.
+- **daisyUI**: To provide pre-styled components and themes for a better user experience.
+
+## Contributing
+
+Feel free to submit issues or pull requests if you would like to contribute to the project.
